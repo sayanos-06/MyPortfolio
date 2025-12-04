@@ -127,7 +127,7 @@ export default function AppPage() {
           {/* Right column – screenshots placeholder */}
             <aside className="space-y-6">
             {/* Screenshots placeholder (Swiper later) */}
-            <div className="overflow-hidden rounded-2xl border border-white/15 bg-slate-900/80 shadow-lg shadow-slate-950/60">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                 Screenshots
               </p>
