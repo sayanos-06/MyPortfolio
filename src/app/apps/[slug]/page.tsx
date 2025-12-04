@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { APPS } from "@/data/apps";
+import ScreenCarousel from "@/components/ScreenCarousel";
 
 export default function AppPage() {
   // useParams reads the slug from the URL on the client
@@ -126,12 +127,14 @@ export default function AppPage() {
           {/* Right column – screenshots placeholder */}
             <aside className="space-y-6">
             {/* Screenshots placeholder (Swiper later) */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
+            <div className="overflow-hidden rounded-2xl border border-white/15 bg-slate-900/80 shadow-lg shadow-slate-950/60">
               <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
                 Screenshots
               </p>
-              <div className="h-56 rounded-2xl bg-slate-900/70" />
-              {/* We'll replace that div with Swiper on another day */}
+              <ScreenCarousel
+                screenshots={app.screenshots}
+                appName={app.name}
+              />
             </div>
 
             {/* Ratings & Reviews */}

@@ -32,7 +32,18 @@ export const APPS: AppItem[] = [
     linkGitHub: "https://github.com/your-username/hazardiq",
     linkApk: "",
     linkPlayStore: "",
-    screenshots: ["/screenshots/h1.png", "/screenshots/h2.png"],
+    screenshots: [
+      "/screenshots/screenshot_hq (1).png",
+      "/screenshots/screenshot_hq (2).png",
+      "/screenshots/screenshot_hq (3).png",
+      "/screenshots/screenshot_hq (4).png",
+      "/screenshots/screenshot_hq (5).png",
+      "/screenshots/screenshot_hq (6).png",
+      "/screenshots/screenshot_hq (7).png",
+      "/screenshots/screenshot_hq (8).png",
+      "/screenshots/screenshot_hq (9).png",
+      "/screenshots/screenshot_hq (10).png",
+    ],
     description:
       "HazardIQ+ helps citizens stay informed during emergencies with real-time hazard alerts, SOS requests, and map-based visualization.",
     whatsNew:
