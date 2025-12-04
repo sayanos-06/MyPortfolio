@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { AppItem } from "@/data/apps";
 
 type FeaturedAppProps = {
@@ -6,7 +9,12 @@ type FeaturedAppProps = {
 
 export default function FeaturedApp({ app }: FeaturedAppProps) {
   return (
-    <section className="mb-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+    <motion.section
+      className="mb-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35 }}
+    >
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
         Today
       </p>
@@ -35,6 +43,6 @@ export default function FeaturedApp({ app }: FeaturedAppProps) {
           </span>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }
