@@ -38,6 +38,14 @@ export default function AppPage() {
             <div>
               <h1 className="text-2xl font-semibold">{app.name}</h1>
               <p className="text-sm text-slate-400">{app.subtitle}</p>
+              {app.stats && (
+                <div className="mt-2 flex flex-wrap gap-4 text-xs text-slate-300">
+                  {app.stats.rating && (
+                    <span>★ {app.stats.rating.toFixed(1)} rating</span>
+                  )}
+                  {app.stats.downloads && <span>{app.stats.downloads} installs</span>}
+                </div>
+              )}
             </div>
           </div>
 
@@ -64,9 +72,9 @@ export default function AppPage() {
         </header>
 
         {/* Main content */}
-        <section className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)]">
+        <section className="grid gap-8 md:grid-cols-[minmax(0,2.1fr)_minmax(0,1.6fr)]">
           <div className="space-y-6">
-            {/* Description */}
+            {/* About */}
             <div>
               <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
                 About this app
@@ -76,17 +84,38 @@ export default function AppPage() {
               </p>
             </div>
 
-            {/* Tech Stack */}
+            {/* What's New / Highlights */}
+            {app.whatsNew && (
+              <div>
+                <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+                  What's New
+                </h2>
+                <p className="mt-2 text-sm text-slate-200">{app.whatsNew}</p>
+              </div>
+            )}
+
+            {/* Challenges / Learnings */}
+            {app.challenges && app.challenges.length > 0 && (
+              <div>
+                <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+                  Challenges & Learnings
+                </h2>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-200">
+                  {app.challenges.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Tech stack */}
             <div>
               <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
                 Tech Stack
               </h2>
               <ul className="mt-2 flex flex-wrap gap-2 text-xs text-slate-200">
                 {app.techStack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full bg-slate-900 px-3 py-1"
-                  >
+                  <li key={tech} className="rounded-full bg-slate-900 px-3 py-1">
                     {tech}
                   </li>
                 ))}
@@ -95,11 +124,34 @@ export default function AppPage() {
           </div>
 
           {/* Right column – screenshots placeholder */}
-          <aside className="rounded-3xl border border-white/10 bg-white/5 p-4 text-xs text-slate-400">
-            <p className="mb-2 font-semibold text-slate-200">
-              Screenshots (coming soon)
-            </p>
-            <div className="h-56 rounded-2xl bg-slate-900/70" />
+            <aside className="space-y-6">
+            {/* Screenshots placeholder (Swiper later) */}
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                Screenshots
+              </p>
+              <div className="h-56 rounded-2xl bg-slate-900/70" />
+              {/* We'll replace that div with Swiper on another day */}
+            </div>
+
+            {/* Ratings & Reviews */}
+            {app.reviews && app.reviews.length > 0 && (
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Ratings & Reviews
+                </p>
+                <ul className="space-y-2 text-xs text-slate-200">
+                  {app.reviews.map((review) => (
+                    <li
+                      key={review}
+                      className="rounded-2xl bg-slate-900/70 p-2 leading-relaxed"
+                    >
+                      {review}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </aside>
         </section>
       </section>
