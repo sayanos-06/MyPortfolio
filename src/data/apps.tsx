@@ -29,7 +29,7 @@ export const APPS: AppItem[] = [
     isFeatured: true,
     techStack: ["Android", "Kotlin", "Firebase", "Maps SDK"],
     tags: ["Android", "Maps", "Realtime"],
-    linkGitHub: "https://github.com/your-username/hazardiq",
+    linkGitHub: "https://github.com/sayanos-06/HazardIQ",
     linkApk: "",
     linkPlayStore: "",
     screenshots: [
