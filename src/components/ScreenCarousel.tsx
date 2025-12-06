@@ -28,14 +28,14 @@ export default function ScreenCarousel({
       {screenshots.map((src) => (
         <SwiperSlide
           key={src}
-          className="!w-[220px] sm:!w-[260px]"
+          className="!w-[110px] sm:!w-[130px]"
         >
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70">
             <Image
               src={src}
               alt={`${appName} screenshot`}
-              width={520}
-              height={1040}
+              width={180}
+              height={400}
               className="h-[260px] w-full object-cover"
             />
           </div>
