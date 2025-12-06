@@ -43,7 +43,7 @@ export default function HomeContent() {
   const hasFilters = Boolean(search.trim() || activeTag);
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
+    <main className="min-h-screen text-slate-100">
       <section className="mx-auto max-w-5xl px-4 py-8 space-y-6">
         {/* Featured / Today card */}
         <FeaturedApp app={featuredApp} />
