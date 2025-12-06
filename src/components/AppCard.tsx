@@ -25,9 +25,16 @@ const { showToast } = useToast();
       >
         <div className="flex items-center gap-3">
           {/* Temp icon – later replace with <Image> */}
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-800 text-[11px] font-semibold">
-            {app.name.charAt(0)}
-          </div>
+          <motion.div
+            layoutId={`icon-${app.slug}`}
+            className="overflow-hidden rounded-full bg-slate-800 flex h-14 w-14 shadow-[0_0_12px_rgba(0,0,0,0.45)]"
+          >
+            <img
+              src={app.icon}
+              alt={`${app.name} icon`}
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
 
           <div>
             <p className="text-sm font-medium">{app.name}</p>
@@ -44,15 +51,6 @@ const { showToast } = useToast();
               ))}
             </div>
           </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <motion.div
-            layoutId={`icon-${app.slug}`}
-            className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-800 text-[11px] font-semibold"
-          >
-            {app.name.charAt(0)}
-          </motion.div>
-          {/* text ... */}
         </div>
         {/* For now this is just text, no click handler needed */}
         <button

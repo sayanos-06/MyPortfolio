@@ -29,7 +29,7 @@ export default function AppPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
+    <main className="min-h-screen text-slate-100">
       <section className="mx-auto max-w-5xl px-4 py-10 space-y-8">
         {/* Header */}
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -39,9 +39,13 @@ export default function AppPage() {
           >
             <motion.div
               layoutId={`icon-${app.slug}`}
-              className="flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-800 text-lg font-semibold"
+              className="overflow-hidden rounded-3xl bg-slate-800 flex h-14 w-14 shadow-[0_0_12px_rgba(0,0,0,0.45)]"
             >
-              {app.name.charAt(0)}
+              <img
+                src={app.icon}
+                alt={`${app.name} icon`}
+                className="h-full w-full object-cover"
+              />
             </motion.div>
             <div>
               <h1 className="text-2xl font-semibold">{app.name}</h1>
