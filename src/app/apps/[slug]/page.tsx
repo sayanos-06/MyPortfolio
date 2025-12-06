@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import { APPS } from "@/data/apps";
 import ScreenCarousel from "@/components/ScreenCarousel";
+import { motion } from "framer-motion";
 
 export default function AppPage() {
   // useParams reads the slug from the URL on the client
@@ -32,10 +33,16 @@ export default function AppPage() {
       <section className="mx-auto max-w-5xl px-4 py-10 space-y-8">
         {/* Header */}
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-4">
-            <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-800 text-lg font-semibold">
+          <motion.div
+            layoutId={`card-${app.slug}`}
+            className="flex items-center gap-4"
+          >
+            <motion.div
+              layoutId={`icon-${app.slug}`}
+              className="flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-800 text-lg font-semibold"
+            >
               {app.name.charAt(0)}
-            </div>
+            </motion.div>
             <div>
               <h1 className="text-2xl font-semibold">{app.name}</h1>
               <p className="text-sm text-slate-400">{app.subtitle}</p>
@@ -48,7 +55,7 @@ export default function AppPage() {
                 </div>
               )}
             </div>
-          </div>
+          </motion.div>
 
           <div className="flex flex-wrap items-center gap-3">
             {app.linkPlayStore || app.linkApk || app.linkGitHub ? (
